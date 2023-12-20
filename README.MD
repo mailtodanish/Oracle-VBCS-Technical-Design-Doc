@@ -4,9 +4,11 @@ Generate TDD for a Oracle VBCS project in a minute.
 
 I am implementing a python based program to create technical design doc of a VBCS applictaion.
 
+feel free to fork and create pull requests!
+
 ## Authors
 
-- [@mailtodanish](https://www.github.com/mailtodanish)
+- [MOHD AHSHAN DANISH](https://www.github.com/mailtodanish)
 
 ```
 Download in D: Drive  [WINDOW]
@@ -45,6 +47,8 @@ Technical Design Doc will be generated in main folder. [TDD.docx]
 Sample Documnet:
 
 ![Logo](img/img1.png)
+
+
 
 
 
