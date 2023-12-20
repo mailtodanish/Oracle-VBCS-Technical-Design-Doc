@@ -1,0 +1,71 @@
+{
+  "paths": {
+    "exclude": [
+      "scripts/**", "tests/**", "webApps/vbcookbook/resources/js/**", "webApps/vbcookbook/flows/home/pages/home-redwood-page.*", "services/**", "dynamicLayouts/**"
+    ]
+  },
+  "rules": {
+    "oj-sp-pageTemplate-notFound-in-vbPage": {
+       "description": "Page template missing in back-button-start-page.html. Supported page templates are: oj-sp-dashboard-landing-page,oj-sp-data-management-page,oj-sp-guided-process,oj-sp-item-overview-page,oj-sp-simple-create-edit,oj-sp-advanced-create-edit,oj-sp-foldout-layout,oj-sp-general-overview-page,oj-sp-welcome-page,oj-sp-smart-filter-search,oj-sp-smart-filter-search-2,oj-sp-smart-search-page,oj-sp-collection-detail-page.",
+      "enabled": false
+    },
+    "oj-html-cspexpr": {
+       "description": "Attribute 'value' contains an expression that may not be compatible with all Content Security policies: Expected expression after = at attribute value -> the csp expression evaluator does not support arrow function syntax",
+      "enabled": false
+    },
+    "translations.audit.propertyNotTranslated": {
+      "enabled": false
+    },
+    "translations.audit.page.json.valueNotTranslated" : {
+      "enabled": false
+    },
+    "oj-sp-headers-usage" : {
+      "enabled": false,
+      "description": "in shell page: oj-sp-header-general-overview can not be used directly in any page, instead used appropriate Page template component to uptake this component"
+    },
+    "oj-sp-un-approved-components-restricted" : {
+      "enabled": false,
+      "description": "in fileloader-csv/pages/fileloader-csv-start-page.html: oj-message component is not an approved Redwood component"
+    },
+    "oj-sp-page-templates-displayOptions-responsivePadding-deprecated" : {
+      "enabled": false,
+      "description": "in pages/home-redwood-custom-page.html: This rule checks for oj-sp-advanced-create-edit,oj-sp-general-overview-page,oj-sp-welcome-page component with off value which is deprecated."
+    },
+    "oj-sp-message-dialog-method-open-deprecated" : {
+      "enabled": false,
+      "description": "in many files: Deprecated method open found in webApps/vbcookbook/flows/confirmation-dialog/pages/confirmation-dialog-start-page-chains/beforeTabChange.json in any of oj-sp-message-dialog-destructive,oj-sp-message-dialog-general,oj-sp-message-unsaved-changes component."
+    },
+    "oj-html-ko-comment": {
+      "description": "Knockout comment binding \"if:\" found. Use of JET <oj-bind-if> recommended.",
+      "enabled": false
+    },
+    "json#unused_import" : {
+      "description": "Unused components dependency",
+      "enabled": false
+    },
+    "oj-html-form-layout-maxcols" : {
+      "enabled": false
+    },
+    "csp-html-style-unsafe-inline": {
+      "description": "<b>CSP-1030:</b><br>Embedding styles into HTML using &lt;style&gt; tags is a CSP violation.<br>For example, the following implementation will be blocked:<p><b>&lt;style&gt;<br> &nbsp; &nbsp; #inline-style { background: red }<br>&lt;/style&gt;</b><p>The general solution is to extract the styles into a style sheet and reference it in the HTML using <b>&lt;link href=\". . .\"&gt;</b><b><p>CSP-1031:</b><br>Setting a style attribute directly on element, e.g.<b>&lt;div style=\". . .\"&gt;</b> is a CSP violation.<p>The general solution is to set properties directly on the element's style property, e.g.<br><b>element.style.display = \"none\"</b><p>Alternatively, styles can be added by changing to a class and including the class in the HTML element.",
+      "enabled": false
+    },
+    "csp-html-script-unsafe-inline": {
+      "description": "CSP-1020:<br>Inline script blocks are considered to be CSP violation. The general solution is to use hashes or a nonce to allow inline scripts to run.<p>CSP-1021:<br>The execution of a JS event handler from inline HTML markup is a CSP violation. e.g. onclick onload onmouseover onsubmit, etc.<p>The general solution is to use <b>addEventListener()</b>. e.g.<p> &nbsp; &nbsp; <b>&lt;button id=\"btn\" <b>onclick='doSomething()'&gt;</b><p>can be replaced with<p> &nbsp; &nbsp; document.getElementById(\"btn\")<b>.addEventListener('click', doSomething)</b>",
+      "enabled": false
+    },
+    "oj-sp-avoid-oj-messages": {
+      "description": "Ensure oj-messages , oj-message,  oj-message-banner is not used in redwood application instead use oj-sp-messages-banner or oj-sp-messages-toast",
+      "enabled": false
+    },
+    "oj-sp-empty-state-usage": {
+      "description": "Ensure noData slot of collections use oj-sp-empty-state",
+      "enabled": false
+    },
+    "oj-sp-welcome-page-search-contents": {
+      "description": "Ensure correct contents for oj-sp-welcome-page",
+      "enabled": false
+    }
+  },
+  "auditors": {}
+}

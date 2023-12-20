@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+ Copyright (c)2020, 2023, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+
+<html lang="en-us">
+<head>
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://static.oracle.com">
+  <!-- vb:inject id="headContent" theme="resources/css/dt.theme.redwood" -->
+  <link type="text/css" rel="stylesheet" href="resources/css/app.css">
+
+  <link rel="icon" href="resources/images/favicon.ico" type="image/ico">
+  <title>Oracle Visual Builder Cookbook</title>
+  <!-- vb:inject id="pwa" -->
+</head>
+
+
+
+<body class="oj-web-applayout-body">
+
+<oj-vb-content config="[[vbApplication]]"></oj-vb-content>
+
+<!-- visualBuilderScripts -->
+<script type="application/javascript">
+  window.vbInitConfig.SERVICE_WORKER_CONFIG = {
+      disabled: true
+    };
+</script>
+
+<script type="text/javascript">
+  window.vbInitConfig  = window.vbInitConfig || {}; 
+  window.vbInitConfig.TEST_MODE = "webdriver";
+</script>
+</body>
+
+</html>

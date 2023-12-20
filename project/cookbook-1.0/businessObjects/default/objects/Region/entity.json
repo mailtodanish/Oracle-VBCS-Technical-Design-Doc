@@ -1,0 +1,117 @@
+{
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "key": true,
+            "name": "id",
+            "oid": "894ec3b2-ba14-4d19-bd5a-670247bc2dcf",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "name": "creationDate",
+            "oid": "ed7a795f-900f-4961-bafd-966398a03285",
+            "type": "datetime",
+            "historyType": "timeCreated"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "name": "lastUpdateDate",
+            "oid": "5175b730-7f4a-48ae-82f4-2745f1d562ff",
+            "type": "datetime",
+            "historyType": "timeUpdated"
+        },
+        {
+            "displayLabel": "Created By",
+            "name": "createdBy",
+            "oid": "7abd13b2-a073-47ae-baec-633151d7b446",
+            "type": "string",
+            "historyType": "createdBy"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "name": "lastUpdatedBy",
+            "oid": "c89fd2dd-b601-4e1b-8c3c-c3db6da3ac55",
+            "type": "string",
+            "historyType": "updatedBy"
+        },
+        {
+            "displayLabel": "Version Number",
+            "name": "abcsChangeNumber",
+            "oid": "5d434dce-6187-4854-af49-aefcee1b425a",
+            "type": "number",
+            "historyType": "versionNumber"
+        },
+        {
+            "name": "regionName",
+            "oid": "413e4c2e-8671-4b05-8265-1e8a907c45c7",
+            "required": true,
+            "displayLabel": "RegionName",
+            "type": "string"
+        }
+    ],
+    "name": "Region",
+    "oid": "98b87a65-c2b9-4d7f-a6b1-93c96dfe3480",
+    "displayLabel": "Region",
+    "pluralLabel": "Regions",
+    "relationships": [
+        {
+            "name": "countryCollection",
+            "reverseRelationship": "inRegion",
+            "targetEntity": "Country",
+            "type": "incoming",
+            "exposeAccessor": false,
+            "displayField": "regionName"
+        }
+    ],
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": false
+                    },
+                    {
+                        "name": "update",
+                        "value": false
+                    },
+                    {
+                        "name": "delete",
+                        "value": false
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    },
+    "setupData": true
+}

@@ -1,0 +1,33 @@
+{
+  "component-dependencies": {
+    "oj-sample": {
+      "version": "8.0.0",
+      "components": {
+        "input-text-typeahead": "8.0.0"
+      }
+    },
+    "oj-dyn": {
+      "version": "14.1.2",
+      "components": {
+        "form": "14.1.2",
+        "bind-field": "14.1.2",
+        "container": "14.1.2"
+      }
+    },
+    "oj-dynamic": {
+      "version": "14.1.2",
+      "components": {
+        "table": "14.1.2"
+      }
+    },
+    "oj-sp": {
+      "version": "2310.0.1",
+      "components": {
+        "header-general-overview": "2310.0.1",
+        "smart-filter-search": "2310.0.1",
+        "collection-container": "2310.0.1",
+        "welcome-page": "2310.0.1"
+      }
+    }
+  }
+}

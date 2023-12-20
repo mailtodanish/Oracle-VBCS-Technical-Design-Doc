@@ -1,1 +1,1 @@
-copy your project in this directory.
+Delete the existing demo project and upload your project in this directory.

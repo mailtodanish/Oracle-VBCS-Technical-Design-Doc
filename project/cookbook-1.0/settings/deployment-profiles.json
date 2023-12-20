@@ -1,0 +1,22 @@
+{
+    "profiles": [
+        {
+            "displayName":"Base configuration",
+            "id":"base_configuration",
+            "description":"Default development profile in VBCS",
+            "mobileBuildConfiguration": {
+                "mobilecordovacontacts": {
+                    "android": "mobilecordovacontacts_09449218792645828"
+                },
+                "barcodescan": {
+                    "android": "barcodescan_05315479543074642"
+                }
+            }
+        }
+    ],
+    "defaults":{
+        "dev": "base_configuration",
+        "stage": "base_configuration",
+        "publish": "base_configuration"
+    }
+}

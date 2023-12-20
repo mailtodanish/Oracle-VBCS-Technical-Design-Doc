@@ -1,0 +1,146 @@
+{
+  "pageModelVersion": "19.4.3.2",
+  "routerFlow": "home",
+  "variables": {
+    "messagesADP": {
+      "type": "vb/ArrayDataProvider",
+      "defaultValue": {
+        "keyAttributes": "id",
+        "itemType": "page:messageType"
+      }
+    },
+    "globalLinks": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "id": "aboutOracle",
+          "label": "About Oracle",
+          "url": "http://www.oracle.com/us/corporate/index.html#menu-about"
+        },
+        {
+          "id": "contactUs",
+          "label": "Contact Us",
+          "url": "http://www.oracle.com/us/corporate/contact/index.html"
+        },
+        {
+          "id": "legalNotices",
+          "label": "Legal Notices",
+          "url": "http://www.oracle.com/us/legal/index.html"
+        },
+        {
+          "id": "termsOfUse",
+          "label": "Terms Of Use",
+          "url": "http://www.oracle.com/us/legal/terms/index.html"
+        },
+        {
+          "id": "yourPrivacyRights",
+          "label": "Your Privacy Rights",
+          "url": "http://www.oracle.com/us/legal/privacy/index.html"
+        }
+      ]
+    },
+    "copyright": {
+      "type": "string",
+      "defaultValue": "Copyright © 2014, 2023 Oracle and/or its affiliates All rights reserved."
+    },
+    "secondaryActions": {
+      "type": "object[]",
+      "defaultValue": [
+        {
+          "id": "secondary_action_1",
+          "label": "Help",
+          "display": "on"
+        }
+      ]
+    }
+  },
+  "types": {
+    "messageType": {
+      "id": "string",
+      "severity": "string",
+      "category": "string",
+      "summary": "string",
+      "detail": "string",
+      "timestamp": "string",
+      "autoTimeout": "number"
+    }
+  },
+  "chains": {},
+  "eventListeners": {
+    "buttonAction3": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChain"
+        }
+      ]
+    },
+    "generalOverviewPageHeaderSpInFlowBack": {
+      "chains": [
+        {
+          "chainId": "navigateToHomePage"
+        }
+      ]
+    },
+    "generalOverviewPageHeaderSpSecondaryAction": {
+      "chains": [
+        {
+          "chainId": "openHelp"
+        }
+      ]
+    },
+    "vbNotification": {
+      "chains": [
+        {
+          "chainId": "showNotification",
+          "parameters": {
+            "eventPayload": "{{ { id: $event.key, summary: $event.summary, detail: $event.message, severity: $event.type, autoTimeout: $event.displayMode === 'transient' ? 0 : -1, timestamp: oj.IntlConverterUtils.dateToLocalIso(new Date()) } }}"
+          }
+        }
+      ]
+    },
+    "onMessageClose": {
+      "chains": [
+        {
+          "chainId": "closeNotificationHandler",
+          "parameters": {
+            "eventMessage": "{{ $event.detail.message }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-checkboxset": {
+        "path": "ojs/ojcheckboxset"
+      },
+      "oj-dialog": {
+        "path": "ojs/ojdialog"
+      },
+      "oj-messages": {
+        "path": "ojs/ojmessages"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-sp-header-general-overview": {
+        "path": "oj-sp/header-general-overview/loader"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-combobox-one": {
+        "path": "ojs/ojselectcombobox"
+      },
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+    }
+  }
+}

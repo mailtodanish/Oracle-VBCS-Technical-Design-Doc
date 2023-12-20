@@ -1,6 +1,12 @@
-### Generate Technical Design Doc for a Oracle VBCS Applictaion
+# Generate Technical Design Doc for a Oracle VBCS Applictaion
+
+Generate TDD for a Oracle VBCS project
 
 I am implementing a python based program to create technical design doc of a VBCS applictaion.
+
+## Authors
+
+- [@mailtodanish](https://www.github.com/mailtodanish)
 
 ```Download in D: Drive  [WINDOW]
 ```
@@ -21,8 +27,14 @@ venv\Scripts\activate   [WINDOW]
 ```
 python -m pip install -r requirements.txt
 ```
-4. Place your project folder in project dir.
+4. Delete the existing demo project and upload your project in project directory
 
-5. Update config.json
+5. Run
+
+``` python main.py
+```
 
 If you face any issue please raise a issue request under issue.
+
+Technical Design Doc will be generated in main folder. [TDD.docx]
+![Logo](img/img1.png)

@@ -1,0 +1,294 @@
+/**
+ * Copyright (c)2020, 2023, Oracle and/or its affiliates.
+ * Licensed under The Universal Permissive License (UPL), Version 1.0
+ * as shown at https://oss.oracle.com/licenses/upl/
+ */
+.main{
+background-image: url("../images/categories/mainbg.png");
+}
+
+.hidden-results {
+  max-height: 1px;
+  height: 1px;
+  visibility: hidden;
+}
+
+.components-tile{
+ background-image: url("../images/categories/componentsbg.png");
+ border-radius: 5px;
+ height:655px
+}
+
+.pwa-tile
+{
+ background-image: url("../images/categories/pwabg.png");
+ border-radius: 5px;
+}
+
+.dynamic-tile{
+ background-image: url("../images/categories/dynamicuibg.png");
+ border-radius: 5px;
+ height:300px
+}
+
+.rest-tile{
+ background-image: url("../images/categories/restbg.png");
+ border-radius: 5px;
+ height:350px
+}
+
+.application-tile{
+ background-image: url("../images/categories/applicationbg.png");
+ border-radius: 5px;
+ height:380px
+}
+
+.tiles-heading{
+  opacity:0.6;
+}
+
+.recipe-action-card{
+  max-width: 300px; 
+  display: inline-block; 
+  width: 300px;
+}
+
+.tile-wrapper-div{
+  color: white; 
+  width: 96vw;
+}
+
+.tile-desc-div{
+opacity: 0.6
+}
+
+.downloaded-recipe-wrapper{
+width: 96vw; 
+overflow-x: auto; 
+white-space: nowrap;
+}
+
+.downloaded-recipe-div{
+  display:inline-block;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip + .tooltip-body {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  transform: translateY(30px) translateX(50px);
+  transition: all .35s ease-out;
+  z-index: -999;
+}
+
+.tooltip:hover + .tooltip-body {
+  opacity: 1;
+  z-index: 999;
+}
+
+.recipeLink{
+  color: white
+}
+
+.recipeLink:hover {
+  color: white;
+}
+
+.demo-data-grid {
+      width:100%;
+      min-height:25rem;
+      height:calc(75vh - 10px);
+      min-width: 300px
+}
+
+pre {
+  overflow-x: auto;
+}
+
+.cookbook-page-footer {
+    background-color: #3A3C3E;
+    padding-bottom: 0;
+}
+
+.demo-cook-content {
+    width: 100%
+}
+
+.demo-pinned-navlist .demo-cook-content {
+    width: calc(100% - 280px);
+    background-color: #F8F6F4;
+}
+
+.demo-content {
+    padding: 0
+}
+
+.cookbook-page-footer {
+    background-color: #222324;
+    border-top-color: #222324;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: hsl(203, 2%, 100%)
+}
+
+.cookbook-page-footer ul {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0
+}
+
+.cookbook-page-footer li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 0;
+    padding-right: 10px;
+    border-right: 1px solid #d9dfe3
+}
+
+.cookbook-page-footer li:last-child {
+    margin-left: 0;
+    padding-left: 0;
+    border-right: none
+}
+
+.componentCategoryItemListview {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    border-style:none;
+}
+
+.categorybanner .categorybanner_header {
+    font-size: 46px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    line-height: 40px;
+    padding-left: 20px;
+    font-weight: lighter;
+    font-family: "SF UI Display","Helvetica Neue","Roboto","Segoe UI",Arial,sans-serif;
+    -webkit-transition: height 0.4s ease-in-out, width 0.4s ease-in-out,font-size 0.4s ease-in-out;
+    transition: height 0.4s ease-in-out,width 0.4s ease-in-out,font-size 0.4s ease-in-out
+}
+
+.componentCategoryItemListview {
+    position: relative;
+    background-image: none;
+    margin-bottom: 15px;
+    padding: 0
+}
+
+.componentCategoryItemListview img {
+    display: block
+}
+
+.componentCategoryItemListview .category_item_header {
+    font-size: 16px;
+    font-weight: normal
+}
+
+.componentCategoryItemListview {
+    border-top: 1px solid #d6dfe6
+}
+
+.componentImage img {
+    padding: 5px
+}
+
+
+
+:root {
+  /* Colors used the dashboard page: */
+  --rw-color-one:      70, 117, 83;
+  --rw-color-two:      59, 112, 135;
+  --rw-color-three:    146, 88, 101;
+  --rw-color-four:     100, 106, 115;
+  --rw-color-five:     240, 204, 113;
+
+  --rw-color-one-darker:      51, 85, 60;
+  --rw-color-two-darker:      44, 82, 102;
+  --rw-color-three-darker:    108, 63, 73;
+  --rw-color-four-darker:     73, 77, 83;
+}
+
+.componentCategoryItemListview, .componentCategoryItemListview div.demo-list {
+    border-width: 1px;
+    border-style: solid
+}
+
+.demo-list {
+    background-color: #fff
+}
+
+.componentCategoryItemListview, .componentCategoryItemListview div.demo-list {
+    border-color: #d6dfe6
+}
+
+.componentCategoryItemListview a:hover,.componentCategoryItemListview a:hover div.demo-list {
+    cursor: pointer
+}
+
+.componentCategoryItemListview .componentImage img {
+    width: 100%;
+    max-width: 200px;
+    height: 143px;
+    padding: 0
+}
+
+
+.categorybanner {
+    transition: padding .4s ease-in-out;
+    color: white;
+    margin: 0;
+}
+
+.sample-box {
+}
+
+.sample-box2 {
+  padding: 16px;
+  background: white;
+}
+
+.recipe-box {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 36px;
+}
+
+.recipe-box { overflow: auto; }
+
+#vbRouterContent {
+  flex-direction: column;
+}
+
+.fab-button{
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+}
+
+/* this is div added by oj-sp-header-welcome-banner which has excessive padding and margin */
+#main-slot-wrapper {
+  padding-top: 0!important;
+  margin-top: 0!important;
+}
+/* override default padding to match that of smart filter search page */
+.oj-sp-header-welcome-banner-main-panel {
+  padding-top: 18px!important;
+  padding-bottom: 12px!important;
+}
+/* welcome page banner is too high by default - remove that sizing */
+.oj-sp-header-welcome-banner-container {
+  min-height: revert!important;
+}
+
+.text-wrap {
+  max-width: 600px;
+}

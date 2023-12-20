@@ -1,0 +1,711 @@
+{
+  "layoutTypes": {
+    "businessObjects": {
+      "kind": "operationRef",
+      "serviceId": "businessObjects",
+      "operations": [
+        "get_Employee",
+        "getall_Employee",
+        "create_Employee",
+        "update_contacts"
+      ]
+    }
+  },
+  "layouts": {
+    "isDefault": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "formExampleLayout": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "Form Example",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "email",
+              "phoneNumber",
+              "salary",
+              "hireDate"
+            ],
+            "readonly": true,
+            "maxColumns": 2
+          },
+          "usedIn": [
+            "isDefault"
+          ]
+        }
+      }
+    },
+    "employeeFormRuleSet": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "Employee Form RuleSet",
+      "rules": [
+        "getCorrectLayout"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "default",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "id",
+              "firstName",
+              "lastName",
+              "phoneNumber",
+              "email",
+              "salary",
+              "hireDate",
+              "manager"
+            ],
+            "readonly": true
+          },
+          "usedIn": []
+        },
+        "employeeLayout": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "phoneNumber",
+              "email",
+              "hireDate"
+            ],
+            "readonly": true,
+            "maxColumns": 2
+          },
+          "usedIn": [
+            "getCorrectLayout"
+          ]
+        },
+        "managerLayout": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "managerLayout",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "fullName",
+              "phoneNumber",
+              "email",
+              "hireDate",
+              {
+                  "salary": {
+                    "colspan": 2
+                  }
+                }
+            ],
+            "readonly": true,
+            "maxColumns": 2
+          },
+          "usedIn": [
+            "getCorrectLayout"
+          ]
+        },
+        "myselfLayout": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "selfLayout",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "phoneNumber",
+              "email",
+              "hireDate",
+              "salary"
+            ],
+            "readonly": true,
+            "maxColumns": 2,
+            "fieldTemplateMap": {
+            }
+          },
+          "usedIn": [
+            "getCorrectLayout"
+          ]
+        }
+
+      }
+    },
+    "simpleEmployeeListRuleSet": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "Simple Employee List RuleSet",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              "fullName",
+              "email",
+              "phoneNumber",
+              "salary"
+            ]
+          },
+          "usedIn": [
+            "isDefault"
+          ]
+        }
+      },
+      "fieldTemplateMap": {
+        "phoneNumber": "phoneTemplate",
+        "email": "emailTemplate"
+      }
+ 
+    },
+    "tableExampleLayout": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "Table Example",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "email",
+              "phoneNumber",
+              "salary"
+            ]
+          }
+        }
+      }
+    },
+    "getCorrectLayout": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "{{ $value.id === 100 ? \"myselfLayout\" : ($value.manager === 100 ? 'managerLayout' : 'employeeLayout') }}"
+    },
+    "contextBasedForm": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "contextBasedForm",
+      "rules": [
+        "ExternalProfile",
+        "InernalProfile"
+      ],
+      "layouts": {
+
+        "externalProfile": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "externalProfile",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "phoneNumber",
+              "email",
+              "hireDate"
+            ],
+            "readonly": true,
+            "maxColumns": 2
+          },
+          "usedIn": [
+            "ExternalProfile"
+          ]
+        },
+        "internalProfile": {
+          "layoutType": "form",
+          "type": "businessObjects",
+          "label": "internalProfile",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "phoneNumber",
+              "email",
+              "hireDate",
+              "salary"
+            ],
+            "readonly": true,
+            "maxColumns": 2
+          },
+          "usedIn": [
+            "InernalProfile"
+          ]
+        }
+      }
+    },
+    "InernalProfile": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "{{ $componentContext.profile === 'internal' ? 'internalProfile' : null }}"
+    },
+    "ExternalProfile": {
+      "expression": "{{ $componentContext.profile === 'external' ? 'externalProfile' : null }}"
+    },
+    "isDefault2": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "employeeListViewLayout": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "Employee List View Layout",
+      "rules": [
+        "isDefault2"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+
+            "displayProperties": [
+              "fullName",
+              "email",
+              "phoneNumber",
+              "salary"
+            ],
+            "templateId": "employeeListViewTemplate"
+          },
+          "usedIn": [
+            "isDefault2"
+          ]
+        }
+      },
+      "fieldTemplateMap": {
+        "email": "listViewMailTemplate",
+        "fullName": "listViewNameTemplate",
+        "phoneNumber": "listViewPhoneTemplate"
+      }
+    },
+    "isDefault3": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "employeeTableDesktopMode": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "Employee Table Desktop Mode",
+      "rules": [
+        "isDefault3"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              "id",
+              "firstName",
+              "lastName",
+              "phoneNumber",
+              "email",
+              "salary",
+              "hireDate"
+            ]
+          },
+          "usedIn": [
+            "isDefault3"
+          ]
+        }
+      },
+      "fieldTemplateMap": {
+        "id": "avatarTemplate"
+      }
+    },
+    "isDefault5": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "formTransientValueChange": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "formTransientValueChange",
+      "rules": [
+        "isDefault5"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              {
+                "email": {
+                  "readonly": true
+                }
+              }
+            ]
+          },
+          "usedIn": [
+            "isDefault5"
+          ]
+        }
+      }
+    },
+    "isDefault4": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "employeeVirtualFieldCCA": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "employeeVirtualFieldCCA",
+      "rules": [
+        "isDefault4"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "employeeCard"
+            ]
+          },
+          "usedIn": [
+            "isDefault4"
+          ]
+        }
+      },
+      "fieldTemplateMap": {
+        "employeeCard": "employeeCardTemplate"
+      }
+    },
+    "employeeCalculatedField": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "employeeCalculatedField",
+      "rules": [
+        "isDefault4"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              "phoneNumber",
+              "email",
+              "hireDate",
+              "employeeExperience"
+            ],
+            "maxColumns": 2
+          },
+          "usedIn": [
+            "isDefault4"
+          ]
+        }
+      }
+    },
+    "isDefault6": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "editableTable": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "editableTable",
+      "rules": [
+        "isDefault6"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              {
+                  "firstName": {
+                  "maxWidth": "20%"
+                  }
+                },
+              {
+                  "lastName": {
+                  "maxWidth": "20%"
+                  }
+                },
+              {
+                  "email": {
+                  "maxWidth": "25%"
+                  }
+                },
+              {
+                  "phoneNumber": {
+                  "maxWidth": "25%"
+                  }
+                }
+            ]
+          },
+          "usedIn": [
+            "isDefault6"
+          ]
+        },
+        "layoutWithID": {
+          "layoutType": "table",
+          "type": "businessObjects",
+          "label": "layoutWithID",
+          "description": "",
+          "layout": {
+            "displayProperties": [
+              "id"
+            ]
+          },
+          "usedIn": []
+        }
+      }
+    },
+    "fieldTemplateEvent": {
+      "type": "businessObjects",
+      "layoutType": "table",
+      "label": "Field Template Event",
+      "rules": [
+        "isDefault6"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "table",
+          "layout": {
+            "displayProperties": [
+              "nameVF",
+              "email",
+              "phoneNumber",
+              "salary",
+              "hireDate"
+            ]
+          },
+          "usedIn": [
+            "isDefault6"
+          ]
+        }
+      },
+      "fieldTemplateMap": {
+        "nameVF": "tableFieldTemplate"
+      }
+    },
+    "isDefault7": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "empDetailForm": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "empDetailForm",
+      "rules": [
+        "isDefault7"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "fullName",
+              "email",
+              "hireDate",
+              "phoneNumber",
+              "salary"
+            ],
+            "readonly": true
+          }
+        }
+      }
+    },
+    "isDefault8": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "globalFieldTemplate": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "Global Field Template",
+      "rules": [
+        "isDefault8"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "firstName",
+              "lastName",
+              {
+                "email": {
+                  "readonly": true
+                }
+              },
+              "salary"
+            ],
+            "readonly": true
+          },
+          "usedIn": [
+            "isDefault8"
+          ]
+        }
+      }
+    }
+  },
+  "templates": {
+    "avatarTemplate": {
+      "title": "Avatar Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojavatar",
+        "ojs/ojinputtext"
+      ]
+    },
+    "emailTemplate": {
+      "title": "Email Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext"
+      ]
+    },
+    "employeeCardTemplate": {
+      "title": "Employee Card Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext",
+        "employee-card/loader"
+      ]
+    },
+    "listViewMailTemplate": {
+      "title": "List View Mail Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext"
+      ]
+    },
+    "listViewNameTemplate": {
+      "title": "List View Name Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext"
+      ]
+    },
+    "listViewPhoneTemplate": {
+      "title": "List View Phone Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext"
+      ]
+    },
+    "employeeListViewTemplate": {
+      "title": "Employee List View Template",
+      
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "form"
+      },
+      "dependencies": [
+        "oj-dyn/bind-field/loader",
+        "ojs/ojavatar",
+        "ojs/ojformlayout"
+      ],
+      "referencedFields": {
+        "generated": [
+          "email",
+          "fullName",
+          "id",
+          "phoneNumber"
+        ]
+      }
+    },
+    "phoneTemplate": {
+      "title": "Phone Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "employee-card/loader",
+        "oj-dyn/bind-field/loader"        ,
+        "ojs/ojavatar"        ,
+        "ojs/ojinputtext"
+      ]
+    },
+    "tableFieldTemplate": {
+      "title": "Table Field Template",
+      "description": "",
+      "extensible": "byReference",
+      "@dt": {
+        "type": "field"
+      },
+      "dependencies": [
+        "ojs/ojinputtext"
+      ]
+    }
+
+  },
+  "imports": {
+    "css": [
+      "https://static.oracle.com/cdn/vb/vb-icon-font/1/vb-icon-font.css"
+    ]
+  },
+  "eventListeners": {
+    "nameLinkClick": {
+      "chains": [
+        {
+          "chainId": "HyperlinkClickChain",
+          "parameters": {
+            "empId": "{{ $event.target.attributes['_empId'].value }}"
+          }
+        }
+      ]
+    }
+  },
+  "interface": {
+    "events": {
+      "empDetail": {
+        "propagationBehavior": "container",
+        "description": "Emits to page",
+        "payloadType": {
+          "empId": "any"
+        }
+      }
+    }
+  }
+}
