@@ -1,6 +1,6 @@
 # Generate Technical Design Doc for a Oracle VBCS Applictaion
 
-Generate TDD for a Oracle VBCS project
+Generate TDD for a Oracle VBCS project in a minute.
 
 I am implementing a python based program to create technical design doc of a VBCS applictaion.
 
