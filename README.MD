@@ -37,4 +37,5 @@ python -m pip install -r requirements.txt
 If you face any issue please raise a issue request under issue.
 
 Technical Design Doc will be generated in main folder. [TDD.docx]
+
 ![Logo](img/img1.png)
