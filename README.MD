@@ -8,7 +8,8 @@ I am implementing a python based program to create technical design doc of a VBC
 
 - [@mailtodanish](https://www.github.com/mailtodanish)
 
-```Download in D: Drive  [WINDOW]
+```
+Download in D: Drive  [WINDOW]
 ```
 
 1. Create virtual Env
@@ -31,11 +32,19 @@ python -m pip install -r requirements.txt
 
 5. Run
 
-``` python main.py
+``` 
+python main.py
 ```
 
 If you face any issue please raise a issue request under issue.
 
 Technical Design Doc will be generated in main folder. [TDD.docx]
 
+
+
+Sample Documnet:
+
 ![Logo](img/img1.png)
+
+
+
