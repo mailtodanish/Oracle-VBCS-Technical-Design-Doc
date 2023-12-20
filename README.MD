@@ -6,6 +6,8 @@ I am implementing a python based program to create technical design doc of a VBC
 
 feel free to fork and create pull requests!
 
+## Updating all description properties in VBCS objects is essential for proper documentation. 
+
 ## Authors
 
 - [MOHD AHSHAN DANISH](https://www.github.com/mailtodanish)
