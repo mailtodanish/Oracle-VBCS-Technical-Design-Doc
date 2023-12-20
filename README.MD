@@ -2,9 +2,9 @@
 
 Generate TDD for a Oracle VBCS project in a minute.
 
-I am implementing a python based program to create technical design doc of a VBCS applictaion.
+I have implemented a python based program to create technical design doc of a VBCS applictaion.
 
-feel free to fork and create pull requests!
+Updating the Technical Design Doc was a tedious job. Feel free to fork and create pull requests!
 
 ## Note: Updating all description properties in VBCS objects is essential for proper documentation. 
 
