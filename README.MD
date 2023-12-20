@@ -44,7 +44,7 @@ Technical Design Doc will be generated in main folder. [TDD.docx]
 
 
 
-Sample Documnet:
+## Sample Document:
 
 ![Logo](img/img1.png)
 
